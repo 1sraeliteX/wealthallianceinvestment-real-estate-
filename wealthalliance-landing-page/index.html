@@ -562,12 +562,18 @@
             <p class="text-[#2ca58d] font-semibold text-lg">That's where WealthAlliance steps in.</p>
           </div>
           <!-- Toggle Button -->
-          <button id="wealthalliance-toggle" class="mt-6 inline-flex items-center space-x-2 px-6 py-3 bg-[#2ca58d] hover:bg-[#23866f] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl">
-            <svg id="toggle-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-            <span id="toggle-text">With WealthAlliance</span>
-          </button>
+          <div class="mt-6 flex flex-col items-start gap-2">
+            <button id="wealthalliance-toggle" class="inline-flex items-center space-x-2 px-6 py-3 bg-[#2ca58d] hover:bg-[#23866f] active:bg-[#1e705e] text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl active:shadow-md active:translate-y-0.5 cursor-pointer border-2 border-[#1e705e] hover:border-[#1a5d4e]">
+              <svg id="toggle-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <span id="toggle-text">With WealthAlliance</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+              </svg>
+            </button>
+            <p class="text-xs text-[#6b7280] italic">Click to compare without WealthAlliance</p>
+          </div>
         </div>
         <div class="bg-[#2d3235] rounded-2xl p-8">
           <div class="grid grid-cols-2 gap-6">
