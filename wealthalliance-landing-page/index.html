@@ -1100,6 +1100,63 @@
     if (mobileThemeToggle) {
       mobileThemeToggle.addEventListener('click', toggleTheme);
     }
+
+    // Cookie Consent Popup
+    const cookieConsent = document.getElementById('cookie-consent');
+    const acceptCookies = document.getElementById('accept-cookies');
+    const rejectCookies = document.getElementById('reject-cookies');
+    const cookiePreference = localStorage.getItem('cookieConsent');
+
+    // Show popup if no preference stored
+    if (!cookiePreference && cookieConsent) {
+      setTimeout(() => {
+        cookieConsent.classList.remove('translate-y-full', 'opacity-0');
+        cookieConsent.classList.add('translate-y-0', 'opacity-100');
+      }, 1000);
+    }
+
+    if (acceptCookies) {
+      acceptCookies.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        hideCookieConsent();
+      });
+    }
+
+    if (rejectCookies) {
+      rejectCookies.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'rejected');
+        hideCookieConsent();
+      });
+    }
+
+    function hideCookieConsent() {
+      if (cookieConsent) {
+        cookieConsent.classList.add('translate-y-full', 'opacity-0');
+        cookieConsent.classList.remove('translate-y-0', 'opacity-100');
+      }
+    }
   </script>
+
+  <!-- Cookie Consent Popup -->
+  <div id="cookie-consent" class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full opacity-0 transition-all duration-500 ease-in-out">
+    <div class="bg-white dark:bg-[#1f2937] border-t border-gray-200 dark:border-gray-600 shadow-2xl p-4 md:p-6">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex-1">
+          <p class="text-[#373d3f] dark:text-gray-200 text-sm md:text-base">
+            <span class="font-semibold">Your Privacy Matters</span> — We use cookies to enhance your experience and analyze site traffic. 
+            <a href="#" class="text-[#2ca58d] hover:underline">Learn more</a>
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="reject-cookies" class="px-4 py-2 text-sm font-medium text-[#6b7280] hover:text-[#373d3f] dark:text-gray-400 dark:hover:text-gray-200 transition-colors">
+            Reject All
+          </button>
+          <button id="accept-cookies" class="px-6 py-2 bg-[#2ca58d] hover:bg-[#248a76] text-white text-sm font-medium rounded-lg transition-colors">
+            Accept All
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
