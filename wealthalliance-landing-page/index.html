@@ -223,6 +223,10 @@
       color: #2ca58d;
     }
 
+    [data-theme="dark"] .marquee-item {
+      color: #ffffff;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -353,6 +357,11 @@
       transform: scale(1.02);
     }
 
+    .btn-secondary:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(44, 165, 141, 0.1), 0 0 0 2px #2ca58d;
+    }
+
     .btn-small {
       padding: 12px 32px;
       font-size: 14px;
@@ -429,7 +438,7 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <button data-coming-soon class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors">Features</button>
+          <a href="features.html" class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors">Features</a>
           <button data-coming-soon class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors">Pricing</button>
           <button data-coming-soon class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors">About</button>
         </div>
@@ -445,8 +454,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
             </svg>
           </button>
-          <button data-coming-soon class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors px-4 py-2">Login</button>
-          <button data-coming-soon class="btn-secondary !py-2 !px-6">Sign up</button>
+          <a href="https://realestate.wealthallianceinvestments.com/login" class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors px-4 py-2">Login</a>
+          <a href="https://forms.gle/m2TU9xwwdqZePfPJ6" target="_blank" class="btn-secondary !py-2 !px-6">Sign up</a>
         </div>
 
         <!-- Mobile Hamburger -->
@@ -460,7 +469,7 @@
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="mobile-menu md:hidden">
         <div class="flex flex-col space-y-4 py-4">
-          <button data-coming-soon class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors">Features</button>
+          <a href="features.html" class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors">Features</a>
           <button data-coming-soon class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors">Pricing</button>
           <button data-coming-soon class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors">About</button>
           <hr class="border-gray-200">
@@ -471,8 +480,8 @@
             </svg>
             <span id="mobile-theme-text">Dark mode</span>
           </button>
-          <button data-coming-soon class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors">Login</button>
-          <button data-coming-soon class="btn-secondary w-full text-center">Sign up</button>
+          <a href="https://realestate.wealthallianceinvestments.com/login" class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors block">Login</a>
+          <a href="https://forms.gle/m2TU9xwwdqZePfPJ6" target="_blank" class="btn-secondary w-full text-center">Sign up</a>
         </div>
       </div>
     </div>
@@ -507,12 +516,12 @@
             WealthAlliance is an AI-Integrated Smart Property Management System built for Nigerian landlords and caretakers. Automate rent collection, track maintenance, manage tenants with intelligent insights, all in one platform.
           </p>
           <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
-            <button onclick="window.open('https://form.jotform.com/261186467735568', '_blank')" class="btn-primary w-full sm:w-auto">
+            <button onclick="window.open('https://forms.gle/m2TU9xwwdqZePfPJ6', '_blank')" class="btn-primary w-full sm:w-auto">
               Join waitlist
             </button>
-            <button data-coming-soon class="btn-secondary w-full sm:w-auto">
+            <a href="https://realestate.wealthallianceinvestments.com/login" class="btn-secondary w-full sm:w-auto text-center">
               Get started
-            </button>
+            </a>
           </div>
         </div>
         <!-- Hero Image -->
@@ -544,6 +553,23 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="py-16 md:py-20 bg-[#f8f9fa]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-[#e5e7eb]">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#373d3f] mb-8">Overview</h2>
+        <div class="space-y-6 text-[#373d3f] leading-relaxed">
+          <p class="text-base md:text-lg">
+            Property management refers to the administration, operation, and oversight of real estate properties on behalf of property owners. It involves various tasks such as marketing rental properties, finding tenants, collecting rent and ensuring legal compliance.
+          </p>
+          <p class="text-base md:text-lg">
+            Property managers maintain accurate financial records, including income and expense tracking, budgeting, and providing owners with regular financial reports.
+          </p>
         </div>
       </div>
     </div>
@@ -645,7 +671,7 @@
   <section class="py-16 md:py-20 bg-[#f8f9fa]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-2xl md:text-[32px] font-bold text-[#373d3f] mb-4">See WealthAlliance in Action</h2>
+        <h2 class="text-2xl md:text-[32px] font-bold text-[#373d3f] mb-4">Tutorial video</h2>
         <p class="text-base text-[#6b7280] max-w-xl mx-auto">Watch how our platform transforms property management for Nigerian landlords and caretakers</p>
       </div>
       <div class="relative bg-[#373d3f] rounded-2xl overflow-hidden shadow-2xl aspect-video">
@@ -661,7 +687,7 @@
       
       <!-- Join Waitlist CTA -->
       <div class="text-center mt-10">
-        <a href="https://form.jotform.com/261186467735568" target="_blank" rel="noopener noreferrer"
+        <a href="https://forms.gle/m2TU9xwwdqZePfPJ6" target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-8 py-4 bg-[#2ca58d] hover:bg-[#248a76] text-white font-semibold text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
           Join the Waitlist
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -809,7 +835,7 @@
     <div class="relative z-10 max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-2xl md:text-[28px] font-bold text-white mb-4">Ready to transform your property business?</h2>
       <p class="text-base text-white opacity-90 mb-8 leading-relaxed">Join thousands of Nigerian property professionals using WealthAlliance.</p>
-      <button onclick="window.open('https://form.jotform.com/261186467735568', '_blank')" class="btn-primary">
+      <button onclick="window.open('https://forms.gle/m2TU9xwwdqZePfPJ6', '_blank')" class="btn-primary">
         Join waitlist
       </button>
     </div>
@@ -897,7 +923,7 @@
       <div class="text-5xl mb-4">🚀</div>
       <h3 class="text-2xl font-bold text-[#373d3f] mb-3">Coming soon</h3>
       <p class="text-base text-[#373d3f] leading-relaxed mb-6">We're working hard to bring this feature to you. Join the waitlist to be notified when it launches.</p>
-      <button onclick="window.open('https://form.jotform.com/261186467735568', '_blank'); closeComingSoonModal();" class="btn-primary btn-small">
+      <button onclick="window.open('https://forms.gle/m2TU9xwwdqZePfPJ6', '_blank'); closeComingSoonModal();" class="btn-primary btn-small">
         Join waitlist
       </button>
     </div>

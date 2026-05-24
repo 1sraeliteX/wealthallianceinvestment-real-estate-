@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features | WealthAlliance</title>
+  <meta name="description" content="Explore WealthAlliance's comprehensive property management features">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-teal: #2ca58d;
+      --secondary-dark: #373d3f;
+      --light-bg: #f8f9fa;
+      --footer-dark: #2d3235;
+      --border-light: #e5e7eb;
+      --text-muted: #6b7280;
+      --transition: all 300ms ease;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --text-primary: #373d3f;
+      --card-bg: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --light-bg: #1a1a1a;
+      --bg-primary: #1f2937;
+      --bg-secondary: #111827;
+      --text-primary: #f9fafb;
+      --card-bg: #374151;
+      --border-light: #4b5563;
+      --text-muted: #9ca3af;
+    }
+
+    [data-theme="dark"] body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    [data-theme="dark"] #header {
+      background: var(--bg-primary);
+    }
+
+    [data-theme="dark"] .feature-card {
+      background: var(--card-bg);
+      border-color: var(--border-light);
+    }
+
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3 {
+      color: var(--text-primary) !important;
+    }
+
+    [data-theme="dark"] section.bg-white {
+      background-color: var(--bg-primary);
+    }
+
+    [data-theme="dark"] .bg-\[\#f8f9fa\] {
+      background-color: var(--bg-secondary) !important;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-scrolled {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-primary {
+      background-color: #2ca58d;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: all 300ms ease;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      min-height: 44px;
+    }
+
+    .btn-primary:hover {
+      background-color: #23866f;
+      transform: scale(1.02);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #373d3f;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: all 300ms ease;
+      border: 2px solid #373d3f;
+      cursor: pointer;
+      font-size: 16px;
+      min-height: 44px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #373d3f;
+      color: white;
+      transform: scale(1.02);
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 300ms ease;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #373d3f;
+      margin: 6px 0;
+      transition: all 300ms ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+      z-index: 40;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    [data-theme="dark"] .mobile-menu {
+      background: var(--bg-primary);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Header / Navigation -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-40 bg-white transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between py-3">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-[#373d3f] text-xl font-semibold tracking-tight">WealthAlliance</a>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="features.html" class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors">Features</a>
+          <a href="#" class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors">Pricing</a>
+          <a href="#" class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors">About</a>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-4">
+          <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle dark mode">
+            <svg id="sun-icon" class="w-5 h-5 text-[#373d3f] hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <svg id="moon-icon" class="w-5 h-5 text-[#373d3f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </button>
+          <a href="https://realestate.wealthallianceinvestments.com/login" class="text-[#373d3f] font-medium hover:text-[#2ca58d] transition-colors px-4 py-2">Login</a>
+          <a href="https://forms.gle/m2TU9xwwdqZePfPJ6" target="_blank" class="btn-secondary !py-2 !px-6">Sign up</a>
+        </div>
+
+        <button id="hamburger" class="hamburger md:hidden p-2" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="flex flex-col space-y-4 py-4">
+          <a href="features.html" class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors">Features</a>
+          <a href="#" class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors">Pricing</a>
+          <a href="#" class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors">About</a>
+          <hr class="border-gray-200">
+          <button id="mobile-theme-toggle" class="flex items-center space-x-2 text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <span id="mobile-theme-text">Dark mode</span>
+          </button>
+          <a href="https://realestate.wealthallianceinvestments.com/login" class="text-[#373d3f] font-medium text-left py-2 hover:text-[#2ca58d] transition-colors block">Login</a>
+          <a href="https://forms.gle/m2TU9xwwdqZePfPJ6" target="_blank" class="btn-secondary w-full text-center">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-b from-[#f8f9fa] to-white pt-20">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+      <h1 class="text-[32px] md:text-[48px] font-semibold text-[#373d3f] leading-tight mb-6">
+        Marketing-Ready Features
+      </h1>
+      <p class="text-base md:text-lg text-[#373d3f] opacity-85 leading-relaxed mb-10 max-w-3xl mx-auto">
+        Comprehensive property management tools designed to streamline operations and maximize efficiency
+      </p>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="py-16 md:py-20 bg-[#f8f9fa]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-[#e5e7eb]">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#373d3f] mb-8">Overview</h2>
+        <div class="space-y-6 text-[#373d3f] leading-relaxed">
+          <p class="text-base md:text-lg">
+            Property management refers to the administration, operation, and oversight of real estate properties on behalf of property owners. It involves various tasks such as marketing rental properties, finding tenants, collecting rent and ensuring legal compliance.
+          </p>
+          <p class="text-base md:text-lg">
+            Property managers maintain accurate financial records, including income and expense tracking, budgeting, and providing owners with regular financial reports.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Platform Benefits -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#373d3f] mb-12 text-center">Core Platform Benefits</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Comprehensive Dashboard</h3>
+          <p class="text-[#6b7280]">Real-time overview of all property operations</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏠</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Property Management</h3>
+          <p class="text-[#6b7280]">Centralized control of all your properties</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Tenant Management</h3>
+          <p class="text-[#6b7280]">Complete tenant information and lifecycle tracking</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏢</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Unit Management</h3>
+          <p class="text-[#6b7280]">Organize and manage individual rental units</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔧</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Maintenance Request System</h3>
+          <p class="text-[#6b7280]">Streamlined maintenance tracking and resolution</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Support System</h3>
+          <p class="text-[#6b7280]">Built-in support ticketing for tenant issues</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📇</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Contact Management</h3>
+          <p class="text-[#6b7280]">Centralized contact directory for all stakeholders</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financial Management -->
+  <section class="py-16 md:py-20 bg-[#f8f9fa]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#373d3f] mb-12 text-center">Financial Management</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Income & Expense Tracking</h3>
+          <p class="text-[#6b7280]">Monitor all revenue and costs in real-time</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Payment Processing</h3>
+          <p class="text-[#6b7280]">Multiple payment gateways (Bank Transfer, PayPal, Stripe, Flutterwave, Paystack, Razorpay)</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Transaction Management</h3>
+          <p class="text-[#6b7280]">Complete payment history and reconciliation</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Subscription Packages</h3>
+          <p class="text-[#6b7280]">Flexible pricing tiers for different landlord needs</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎟️</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Coupon & Discount Management</h3>
+          <p class="text-[#6b7280]">Run promotions and special offers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Communication & Notifications -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#373d3f] mb-12 text-center">Communication & Notifications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="feature-icon">📧</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Email Notifications</h3>
+          <p class="text-[#6b7280]">Automated updates to tenants and landlords</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">SMS Integration</h3>
+          <p class="text-[#6b7280]">Text message alerts and reminders via Twilio</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">WhatsApp Notifications</h3>
+          <p class="text-[#6b7280]">Direct messaging to tenants and property managers</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Automated Reminders</h3>
+          <p class="text-[#6b7280]">Payment reminders, maintenance alerts, unit status updates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customization & Branding -->
+  <section class="py-16 md:py-20 bg-[#f8f9fa]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#373d3f] mb-12 text-center">Customization & Branding</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Multi-Language Support</h3>
+          <p class="text-[#6b7280]">Reach global users</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌙</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Dark/Light Mode</h3>
+          <p class="text-[#6b7280]">User-preferred viewing experience</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Custom Theme Colors</h3>
+          <p class="text-[#6b7280]">Match your brand identity</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">↔️</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">RTL/LTR Support</h3>
+          <p class="text-[#6b7280]">Support for right-to-left languages</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✍️</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Multi-Font Styles</h3>
+          <p class="text-[#6b7280]">Flexible typography options</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Access Control -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#373d3f] mb-12 text-center">Security & Access Control</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Two-Factor Authentication</h3>
+          <p class="text-[#6b7280]">Enhanced account security</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👤</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Role-Based Access</h3>
+          <p class="text-[#6b7280]">Different permission levels for landlords, property managers, tenants</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Email Verification</h3>
+          <p class="text-[#6b7280]">Secure account verification process</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketing & Visibility -->
+  <section class="py-16 md:py-20 bg-[#f8f9fa]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#373d3f] mb-12 text-center">Marketing & Visibility</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Landing Page Management</h3>
+          <p class="text-[#6b7280]">Professional landing page to attract users</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">SEO Optimization</h3>
+          <p class="text-[#6b7280]">Built-in SEO settings for search engine visibility</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Dynamic CMS</h3>
+          <p class="text-[#6b7280]">Easy content management without code</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Google reCAPTCHA</h3>
+          <p class="text-[#6b7280]">Spam prevention on registration</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advanced Integrations -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#373d3f] mb-12 text-center">Advanced Integrations</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Cloud Storage</h3>
+          <p class="text-[#6b7280]">AWS and Wasabi integration for document management</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">AI-Powered Features</h3>
+          <p class="text-[#6b7280]">ChatGPT integration for smart assistance</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Automation Workflows</h3>
+          <p class="text-[#6b7280]">n8n integration for custom automation</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📄</div>
+          <h3 class="text-xl font-bold text-[#373d3f] mb-3">Legal Documents</h3>
+          <p class="text-[#6b7280]">Agreement module for contracts and templates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-20 bg-[#373d3f]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Property Management?</h2>
+      <p class="text-lg text-gray-300 mb-10">Join thousands of landlords and property managers using WealthAlliance</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="window.open('https://forms.gle/m2TU9xwwdqZePfPJ6', '_blank')" class="btn-primary">
+          Join Waitlist
+        </button>
+        <a href="https://realestate.wealthallianceinvestments.com/login" class="btn-secondary !border-white !text-white hover:!bg-white hover:!text-[#373d3f]">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#2d3235] text-gray-300 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-white font-semibold mb-4">WealthAlliance</h3>
+          <p class="text-sm">Smart property management for Nigerian professionals</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Product</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="features.html" class="hover:text-[#2ca58d] transition-colors">Features</a></li>
+            <li><a href="#" class="hover:text-[#2ca58d] transition-colors">Pricing</a></li>
+            <li><a href="#" class="hover:text-[#2ca58d] transition-colors">Security</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-[#2ca58d] transition-colors">About</a></li>
+            <li><a href="#" class="hover:text-[#2ca58d] transition-colors">Blog</a></li>
+            <li><a href="#" class="hover:text-[#2ca58d] transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Legal</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-[#2ca58d] transition-colors">Privacy</a></li>
+            <li><a href="#" class="hover:text-[#2ca58d] transition-colors">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center text-sm">
+        <p>&copy; 2026 WealthAlliance. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const html = document.documentElement;
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      html.setAttribute('data-theme', savedTheme);
+      updateThemeIcons(savedTheme);
+    }
+
+    function updateThemeIcons(theme) {
+      const sunIcon = document.getElementById('sun-icon');
+      const moonIcon = document.getElementById('moon-icon');
+      const mobileThemeText = document.getElementById('mobile-theme-text');
+
+      if (theme === 'dark') {
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        if (mobileThemeText) mobileThemeText.textContent = 'Light mode';
+      } else {
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        if (mobileThemeText) mobileThemeText.textContent = 'Dark mode';
+      }
+    }
+
+    function toggleTheme() {
+      const currentTheme = html.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcons(newTheme);
+    }
+
+    themeToggle.addEventListener('click', toggleTheme);
+    mobileThemeToggle.addEventListener('click', toggleTheme);
+
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
+
+    initTheme();
+  </script>
+</body>
+</html>
